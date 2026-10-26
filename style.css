@@ -1,0 +1,289 @@
+:root {
+    --primary-color: #0d3b66;
+    --secondary-color: #f4d35e;
+    --text-color: #333333;
+    --bg-light: #f8f9fa;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    /* Latar gradasi biru (langit muda -> biru cerah) */
+    background-color: #b5d9fa;
+    background-image:
+        radial-gradient(circle at 12% 8%, rgba(255, 255, 255, 0.60), transparent 45%),
+        radial-gradient(circle at 90% 85%, rgba(255, 255, 255, 0.25), transparent 40%),
+        linear-gradient(160deg, #e6f3ff 0%, #b5d9fa 45%, #7db9ee 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    background-color: var(--primary-color);
+    background-image: linear-gradient(90deg, #0a2a4d 0%, #0d3b66 50%, #1565c0 100%);
+    color: var(--white);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo h1 {
+    font-size: 1.2rem;
+    line-height: 1.2;
+}
+
+.logo span {
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+}
+
+/* Logo sekolah: bulat sempurna (rasio 1:1) dan terpotong rapi mengikuti lingkaran */
+.logo img {
+    display: block;
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    flex-shrink: 0;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    background: var(--white);
+    border: 3px solid var(--secondary-color);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.30);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: var(--secondary-color);
+}
+
+.hero {
+    background: linear-gradient(135deg, rgba(10, 42, 77, 0.88), rgba(21, 101, 192, 0.72)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+    color: var(--white);
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #e0be43;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body h3 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.meta {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.headmaster-section {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+}
+
+.headmaster-img {
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    height: 200px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+textarea.form-control {
+    resize: vertical;
+    height: 120px;
+}
+
+footer {
+    background-color: var(--primary-color);
+    background-image: linear-gradient(90deg, #0a2a4d 0%, #0d3b66 50%, #1565c0 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 60px;
+}
+
+@media(max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .headmaster-section {
+        flex-direction: column;
+        text-align: center;
+    }
+}
